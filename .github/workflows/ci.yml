@@ -9,9 +9,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      # setup-homebrew registra este checkout como el tap frederickknight/tap
       - uses: Homebrew/actions/setup-homebrew@main
-      # el tap apunta a esta copia del repo, no a la publicada
-      - run: brew tap frederickknight/tap "$GITHUB_WORKSPACE"
       - run: brew install frederickknight/tap/git-park
       - run: brew test frederickknight/tap/git-park
       - run: git park help
