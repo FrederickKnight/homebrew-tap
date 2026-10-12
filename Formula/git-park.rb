@@ -1,8 +1,8 @@
 class GitPark < Formula
   desc "Ramas estacionadas, notas por rama y chequeo de merge previo a los PRs"
   homepage "https://github.com/FrederickKnight/git-park"
-  url "https://github.com/FrederickKnight/git-park/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "8d8ecb9316c93a1592f60458b806e26a0de8aad23448cbc565b9c182fe901b94"
+  url "https://github.com/FrederickKnight/git-park/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "292f0a82d59834603e4d779dab0df689ae5541c197fc345018ef68d20d5f35f4"
   license "MIT"
   head "https://github.com/FrederickKnight/git-park.git", branch: "main"
 
@@ -16,9 +16,9 @@ class GitPark < Formula
   def caveats
     <<~EOS
       Los comandos ya funcionan como git park, git memo, git up, git twin y git kit.
-      Para los alias cortos (park, memo, kit), agrega esto a tu ~/.zshrc o ~/.bashrc:
+      Para los alias cortos (park, memo, kit, twin), agrega esto a tu ~/.zshrc o ~/.bashrc:
 
-        alias park='git park' memo='git memo' kit='git kit'
+        alias park='git park' memo='git memo' kit='git kit' twin='git twin'
     EOS
   end
 
