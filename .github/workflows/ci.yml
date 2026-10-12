@@ -1,0 +1,17 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  formula:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+      # el tap apunta a esta copia del repo, no a la publicada
+      - run: brew tap frederickknight/tap "$GITHUB_WORKSPACE"
+      - run: brew install frederickknight/tap/git-park
+      - run: brew test frederickknight/tap/git-park
+      - run: git park help
